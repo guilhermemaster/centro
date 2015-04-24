@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+#log{
+	width: 300px;
+	height: 200px;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image:url(fundo_login.jpg);
+	background-repeat:repeat-x;
+	border-radius:20px;
+	
+}
+p[title=nome]{
+	width:300px;
+	color:#0F0;
+	font-size:40px;
+	font-family:Georgia, "Times New Roman", Times, serif
+}
+p[title=processo2]{
+	color:#00F;
+	margin-left:50px;
+	font-size:15px;
+	font-family:Georgia, "Times New Roman", Times, serif
+}
+p[title=processo]{
+	color:#00F;
+	margin-left:50px;
+	font-size:15px;
+	font-family:Georgia, "Times New Roman", Times, serif
+
+}
+
+input[type=submit]{
+	background-color:#00F;
+	border-style:none;
+	border-color:#00F;
+	margin-left:100px;
+	
+	
+	}
+input[type=reset]{
+	background-color:#00F;
+	border-style:none;
+	border-color:#00F;
+	width:70px;
+}
+
