@@ -29,15 +29,25 @@
 
             <form method="post" action="cads_programacao.php"> 
 
+ <div class="form-group">
+              <label for="exampleInputEmail1">Data</label>
+              <input type="date" class="form-control" id="exampleInputEmail1" name="dataForm">
+            </div>
+           
+
           <div class="form-group">
-            <label for="exampleInputEmail1">Descrição</label>
-            <textarea class="form-control" rows="3" placeholder="Descrição"></textarea>
+            <label for="exampleInputEmail1">Horário</label>
+            <input type="time" class="form-control" id="exampleInputEmail1" name="timeForm">
           </div>
 
            <div class="form-group">
-            <label for="exampleInputFile">Img</label>
-            <input type="file" id="exampleInputFile">
+            <label for="exampleInputEmail1">Descrição</label>
+             <textarea class="form-control" rows="7" cols="50" name="textForm"></textarea>
           </div>
+
+        
+          <input type="hidden" name="cadastroNovidades" value="ok" />
+      
 
       
 
