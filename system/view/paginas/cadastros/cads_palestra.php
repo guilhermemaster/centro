@@ -27,34 +27,44 @@
           <div class="panel-heading">Palestra</div>
           <div class="panel-body">
            
-             <form method="post" action="cads_palestra.php" enctype="multipart/form-data"> 
+             <form method="post" action="../../../controle/palestras.php" enctype="multipart/form-data"> 
+<!--
+            <div class="form-group">
+              <label for="exampleInputEmail1">Data</labl>
+              <input type="date" class="form-control" id="exampeleInputEmail1"   name="dataForm">
+            </div>
+
+       
+            <div class="form-group">
+              <label for="exampleInputEmail1">Data</labl>
+              <input type="time" class="form-control" id="exampeleInputEmail1"   name="timeForm">
+            </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</labl>
-              <input type="date" class="form-control" id="exampeleInputEmail1" placeholder="Enter email"  name="e">
+              <label for="exampleInputEmail1">Data</labl>
+              <textarea class="form-control" rows="7" cols="50" name="textForm"></textarea>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="r">
-            </div>
-<!--
+          -->
+            
+
+
              <div class="form-group">
               <label for="exampleInputEmail1">Data</label>
-              <input type="date" class="form-control" id="exampleInputEmail1" name="dataF">
+              <input type="date" class="form-control" id="exampleInputEmail1" name="dataForm">
             </div>
            
 
           <div class="form-group">
             <label for="exampleInputEmail1">Horário</label>
-            <input type="time" class="form-control" id="exampleInputEmail1" name="horario">
+            <input type="time" class="form-control" id="exampleInputEmail1" name="timeForm">
           </div>
 
            <div class="form-group">
             <label for="exampleInputEmail1">Descrição</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="texto">
+             <textarea class="form-control" rows="7" cols="50" name="textForm"></textarea>
           </div>
 
-        -->
+        
           <input type="hidden" name="cadastroPalestra" value="ok" />
       
 
@@ -72,18 +82,15 @@
         
 
 <?php
+/*
   if (!empty($_POST['cadastroPalestra'])){
-   // print "<script>alert(".$_POST['dataF'].")</script>";
-  //  print "<script>alert(".$_POST['e'].")</script>";
-    //print "<script>alert(".$_POST['r'].")</script>";
 
-   print $_POST['e'];
-    print "<SCRIPT LANGUAGE=\"JavaScript\" TYPE=\"text/javascript\">
+    $date = new DateTime($_POST['dataForm']);
+    print $date->format('d/m/Y');
+    print $date->diff($ourtradata);
 
-alert (".$_POST['r'].")
-
-</SCRIPT>";
   }
+  */
 ?>
 
 

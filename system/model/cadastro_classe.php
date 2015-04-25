@@ -25,6 +25,16 @@
     		return $this->data;
     	}
 
+        function getHorario(){
+            return $this->horario;
+        }
+
+        function getDescricao(){
+            return $this->descricao;
+        }
+
+
+
 
 
     	function insert(){
