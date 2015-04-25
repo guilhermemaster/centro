@@ -9,16 +9,20 @@
     	public $horario;
     	public $descricao;
 
-    	function setData(){
-    		$this->data;
+    	function setData($dataf){
+    		$this->data=$dataf;
     	}
 
-    	function setHorario(){
-    		$this->horario;
+    	function setHorario($horariof){
+    		$this->horario=$horariof;
     	}
 
-    	function setDescricao(){
-    		$this->descricao;
+    	function setDescricao($descricaof){
+    		$this->descricao=$descricaof;
+    	}
+
+    	function getData(){
+    		return $this->data;
     	}
 
 
