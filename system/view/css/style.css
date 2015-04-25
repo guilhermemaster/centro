@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+.conteudo{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	height:40em;
+	background-color:#F8F8FF;
+	
+}
+
+.submenu{
+	background-color:#4F4F4F;
+	height:40em;
+}
+.titulo{
+	background-color:#363636;
+	height: 7em;
+	color:#FFFFF0; 
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.rodape{
+	background-color:#363636;
+	height: 3em;
+
+}
+
+.positonbtnsair{
+	margin-top:5px;
+	margin-left: 150px;
+
+}
+
+
+.paneldeful{
+	margin-top: 5px;
+}
+.top_deful{
+	margin-top: 5px;
+}
+.lado_lado{
+	float:left;
+	margin-right: 1px;
+}
+.cortexto{
+	color: #FFFFFF;
+}
