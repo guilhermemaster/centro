@@ -27,7 +27,7 @@
           <div class="panel-heading">Palestra</div>
           <div class="panel-body">
            
-             <form method="post" action="../../../controle/palestras.php" enctype="multipart/form-data"> 
+             <form method="post" action="../../../controle/controle_geral.php" enctype="multipart/form-data"> 
 <!--
             <div class="form-group">
               <label for="exampleInputEmail1">Data</labl>

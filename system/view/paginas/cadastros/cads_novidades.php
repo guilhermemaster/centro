@@ -27,30 +27,21 @@
           <div class="panel-heading">Novidades</div>
           <div class="panel-body">
 
-            <form method="post" action="cads_programacao.php"> 
-
- <div class="form-group">
-              <label for="exampleInputEmail1">Data</label>
-              <input type="date" class="form-control" id="exampleInputEmail1" name="dataForm">
-            </div>
-           
+            <form method="post" action="../../../controle/controle_geral.php"> 
+          
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Horário</label>
-            <input type="time" class="form-control" id="exampleInputEmail1" name="timeForm">
+            <label for="exampleInputEmail1">Título</label>
+            <input type="text" class="form-control" id="exampleInputName1" placeholder="Título" autocomplete="off" name="tituloForm">
           </div>
 
            <div class="form-group">
             <label for="exampleInputEmail1">Descrição</label>
-             <textarea class="form-control" rows="7" cols="50" name="textForm"></textarea>
+             <textarea class="form-control" rows="7" cols="50" placeholder="Descrição" name="textForm"></textarea>
           </div>
 
         
           <input type="hidden" name="cadastroNovidades" value="ok" />
-      
-
-      
-
           <button type="submit" class="btn btn-default">Enviar</button>
           </form>
            

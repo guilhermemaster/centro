@@ -27,26 +27,26 @@
           <div class="panel-heading">Programação</div>
           <div class="panel-body">
             
-           <form method="post" action="cads_programacao.php"> 
+           <form method="post" action="../../../controle/controle_geral.php"> 
 
              <div class="form-group">
               <label for="exampleInputEmail1">Data</label>
-              <input type="date" class="form-control" id="exampleInputEmail1">
+              <input type="date" class="form-control" id="exampleInputEmail1" name="dateForm">
             </div>
            
 
           <div class="form-group">
             <label for="exampleInputEmail1">Horário</label>
-            <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="horaForm">
           </div>
 
            <div class="form-group">
             <label for="exampleInputEmail1">Descrição</label>
-            <textarea class="form-control" rows="3" placeholder="Descrição"></textarea>
+            <textarea class="form-control" rows="3" placeholder="Descrição" name="descForm"></textarea>
           </div>
 
       
-
+          <input type="hidden" name="cadastroProgramacao" value="ok" />
           <button type="submit" class="btn btn-default">Enviar</button>
           </form>
 

@@ -48,12 +48,14 @@
          * @return void
          * @author Guilherme Barbosa Lima
          **/
-        function insert($descricao, $url){
+        function insert($titulo, $texto){
             $pdo=conectar();
-            $insert=$pdo->prepare("insert into novidades (Descricao, url_img) values (:descricaoGeral, :urlGeral)");
-            $insert->bindValue(":descricaoGeral", $descricao, PDO::PARAM_STR);
-            $insert->bindValue(":urlGeral", $url, PDO::PARAM_STR);
-            $insert->execute();
+            $insert=$pdo->prepare("insert into novidades (titulo, texto) values (:titulo, :texto)");
+            $insert->bindValue(":titulo", $titulo, PDO::PARAM_STR);
+            $insert->bindValue(":texto", $texto, PDO::PARAM_STR);
+           if ($insert->execute()){
+            print "<SCRIPT>alert (\"Esta é uma caixa de diálogo ALERT do JavaScript!\")</SCRIPT>";
+           }
         } 
 
         /**
@@ -67,6 +69,32 @@
             $del=$pdo->prepare("delete from novidades where idNovidades=:idRece");
             $del->bindValue(":idRece", $id, PDO::PARAM_INT);
             $del->execute(); 
+        }
+
+    } // END class 
+
+    /**
+     * Modificação da tabela programação no BD
+     *
+     * @package Model
+     * @author Guilherme Barbosa Lima
+     **/
+    class programacao{
+        /**
+         * Inserção de programação no BD.
+         *
+         * @return void
+         * @author Guilherme Barbosa Lima
+         **/
+        function insert($data, $horario, $descricao){
+            $pdo=conectar();
+            $insert=$pdo->prepare("insert into programacao (horario, data, Descricao) values (:horario, :data, :descricao)");
+            $insert->bindValue(":horario", $horario, PDO::PARAM_STR);
+            $insert->bindValue(":data", $data, PDO::PARAM_STR);
+            $insert->bindValue(":descricao", $descricao, PDO::PARAM_STR);
+            if ($insert->execute()){
+            print "<SCRIPT>alert (\"Esta é uma caixa de diálogo ALERT do JavaScript!\")</SCRIPT>";
+           }
         }
 
     } // END class 
