@@ -27,11 +27,11 @@
           <div class="panel-heading">Edição</div>
           <div class="panel-body">
            
-              <form action="cadastro_clientes.php" method="post">
+              <form action="edit_home.php" method="post">
               <button type="submit" class="btn btn-info lado_lado">HOME</button>
               </form>
 
-              <form action="cadastro_fornecedor.php" method="post">
+              <form action="edit_emecam.php" method="post">
               <button type="submit" class="btn btn-info lado_lado">EMECAM</button>
               </form>
 

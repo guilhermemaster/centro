@@ -93,10 +93,36 @@
             $insert->bindValue(":data", $data, PDO::PARAM_STR);
             $insert->bindValue(":descricao", $descricao, PDO::PARAM_STR);
             if ($insert->execute()){
-            print "<SCRIPT>alert (\"Esta é uma caixa de diálogo ALERT do JavaScript!\")</SCRIPT>";
+            print "<SCRIPT>alert (\"Cadastro realizado com sucesso!\")</SCRIPT>";
            }
         }
 
+    } // END class 
+
+    /**
+     * Classe para movimentação de dados do EMECAM
+     *
+     * @package model
+     * @author Guilherme Barbosa Lima
+     **/
+    class emecam{
+        /**
+         * alteração dos valores da tabela emecam
+         *
+         * @return void
+         * @author Guilherme Barbosa Lima
+         **/
+        function edit($titulo, $texto, $img){
+            $pdo=conectar();
+            $edit=$pdo->prepare("update emecam set titulo=:titulo, texto=:texto, url_foto=:url where idemecam=1");
+            $edit->bindValue(":titulo", $titulo, PDO::PARAM_STR);
+            $edit->bindValue(":texto", $texto, PDO::PARAM_STR);
+            $edit->bindValue(":url", $img, PDO::PARAM_STR);
+    
+            if ($edit->execute()){
+            print "<SCRIPT>alert (\"Alteração realizada com sucesso!\")</SCRIPT>";
+           }
+        }
     } // END class 
 
 ?>
