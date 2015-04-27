@@ -35,12 +35,26 @@
 
 
 	if(!empty($_POST['editEmecam'])){
-	$em=new emecam();
+   
+      if(isset($_FILES['imgEmecam'])){
+		      date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
+		 
+		      $ext = strtolower(substr($_FILES['imgEmecam']['name'],-4)); //Pegando extensão do arquivo
+		      $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+		      $dir = '../view/img_up/'; //Diretório para uploads
 
-	$em->edit($_POST['tituloForm'], $_POST['textForm'], $_POST['imgForm']);
-    
-   // header("Location: ../view/paginas/cadastros/cads_novidades.php");
-   header( "refresh:1;url=../view/paginas/edit/edit_emecam.php" );
+		      $em=new emecam();
+
+			  $em->edit($_POST['tituloForm'], $_POST['textForm'], $new_name);
+		 
+		      if (move_uploaded_file($_FILES['imgEmecam']['tmp_name'], $dir.$new_name)){
+				print  "<SCRIPT>alert (\"Arquivo enviado!\")</SCRIPT>";
+				header( "refresh:1;url=../view/paginas/edit/edit_emecam.php" );
+				}else{
+				print "<SCRIPT>alert (\"Arquivo não enviado!\")</SCRIPT>";
+				header( "refresh:1;url=../view/paginas/edit/edit_emecam.php" );
+				}
+		   }
 	}
 
 

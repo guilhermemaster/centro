@@ -27,7 +27,7 @@
           <div class="panel-body">
             <div class="row">
              <div class="col-md-12">
-                <form method="post" action="../../../controle/controle_geral.php"> 
+                <form method="post" action="../../../controle/controle_geral.php" enctype="multipart/form-data"> 
 
               
                 <div class="form-group">
@@ -42,7 +42,7 @@
 
                  <div class="form-group">
                   <label for="exampleInputFile">Imagem</label>
-                  <input type="file" id="exampleInputFile">
+                  <input type="file" id="exampleInputFile" name="imgEmecam" size="20">
                  </div>
                 <input type="hidden" name="editEmecam" value="ok" />
                 <button type="submit" class="btn btn-default">Enviar</button>

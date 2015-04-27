@@ -1,5 +1,6 @@
 <?php
 	include "config/conectar.php";
+    include "geral_class.php";
 
 
    
@@ -13,8 +14,8 @@
         /**
          * Funções referente a palestra inserção e deleção no BD
          *
-         * @return Guilherme Barbosa Lima
-         * @author 
+         * @return void
+         * @author Guilherme Barbosa Lima
          **/
     
 
@@ -113,7 +114,21 @@
          * @author Guilherme Barbosa Lima
          **/
         function edit($titulo, $texto, $img){
+            $general=new geralSys();
             $pdo=conectar();
+
+
+            $deleteigm=$pdo->prepare("select * from emecam");
+            $deleteigm->execute();
+            while($linha=$deleteigm->fetch(PDO::FETCH_ASSOC)){
+              $general->delimg($linha['url_foto']);  
+            }
+
+
+            
+
+
+           
             $edit=$pdo->prepare("update emecam set titulo=:titulo, texto=:texto, url_foto=:url where idemecam=1");
             $edit->bindValue(":titulo", $titulo, PDO::PARAM_STR);
             $edit->bindValue(":texto", $texto, PDO::PARAM_STR);
