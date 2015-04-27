@@ -24,20 +24,31 @@
       ?>
 
         <div class="panel panel-default">
-          <div class="panel-heading">Exclução</div>
+          <div class="panel-heading">Palestras Cadastradas</div>
           <div class="panel-body">
-           
-              <form action="exc_palestra.php" method="post">
-              <button type="submit" class="btn btn-info lado_lado">PALESTRAS</button>
-              </form>
+           <table class="table table-hover">
+            <tr>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Descrição</th>
+              <th>Excluir</th>
+             </tr>
+       
 
-              <form action="cadastro_fornecedor.php" method="post">
-              <button type="submit" class="btn btn-info lado_lado">NOVIDADES</button>
-              </form>
 
-               <form action="cadastro_fornecedor.php" method="post">
-              <button type="submit" class="btn btn-info lado_lado">PROGRAMAÇÃO</button>
-              </form>
+            <tr>
+              <td>data</td>
+              <td>horario</td>
+              <td>descrição</td>
+              <td>
+                <form method="post" action="../../../controle/controle_geral.php" enctype="multipart/form-data"> 
+                  <input type="hidden" name="excPalestra" value="ok" />
+                  <button type="submit" class="btn btn-danger">Excluir</button>
+                </form> 
+              </td>
+            </tr>
+
+          </table> 
 
 
           </div>
