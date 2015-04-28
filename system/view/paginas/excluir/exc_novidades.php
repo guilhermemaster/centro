@@ -24,12 +24,11 @@
       ?>
 
         <div class="panel panel-default">
-          <div class="panel-heading">Palestras Cadastradas</div>
+          <div class="panel-heading">Novidades Cadastradas</div>
           <div class="panel-body">
            <table class="table table-hover">
             <tr>
-              <th>Data</th>
-              <th>Horário</th>
+              <th>Título</th>
               <th>Descrição</th>
               <th>Excluir</th>
              </tr>
@@ -37,22 +36,22 @@
              <?php
               include "../../../model/geral_class.php";
               $ex=new geralSys();
-              $aux=$ex->selectPalestra("palestras");
+              $aux=$ex->selectPalestra("novidades");
               $aux->execute();
 
 
 
               while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
-                $date = new DateTime($linha['data']);
+               
               print"  <tr>
 
-              <td>".$date->format('d/m/Y')."</td>
-              <td>".$linha['horario']."</td>
-              <td>".substr($linha['Descricao'], 0, 15)."</td>
+              
+              <td>".$linha['titulo']."</td>
+              <td>".substr($linha['texto'], 0, 15)."</td>
               <td>
                 <form method=\"post\" action=\"../../../controle/controle_geral.php\"> 
-                  <input type=\"hidden\" name=\"idPalestra\" value=".$linha['idpalestras']." />
-                  <input type=\"hidden\" name=\"excPalestra\" value=\"ok\" />
+                  <input type=\"hidden\" name=\"idNovidades\" value=".$linha['idnovidade']." />
+                  <input type=\"hidden\" name=\"excNovidades\" value=\"ok\" />
                   <button type=\"submit\" class=\"btn btn-danger\">Excluir</button>
                 </form> 
               </td>

@@ -25,9 +25,9 @@ class geralSys{
 	 * @return string
 	 * @author Guilherme Barbosa Lima
 	 **/
-	function selectPalestra(){
+	function selectPalestra($tabela){
 		$pdo=conectar();
-		$selPalestra=$pdo->prepare("select * from palestras");
+		$selPalestra=$pdo->prepare("select * from ".$tabela);
 		//$selPalestra->execute();
 
 		return $selPalestra;

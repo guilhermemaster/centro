@@ -1,10 +1,13 @@
 <?php
 
-	//include "../model/crud_classe.php";
+	include "../model/crud_classe.php";
+	$pl=new palestra();
+	$nv=new novidades();
+	$pr=new programacao();
 
 
 	if (!empty($_POST['cadastroPalestra'])){
-	include "../model/crud_classe.php";
+
 	
 	$pl=new palestra();
 
@@ -15,8 +18,8 @@
 	}
 
 	if(!empty($_POST['cadastroNovidades'])){
-	include "../model/crud_classe.php";
-	$nv=new novidades();
+
+	
 
 	$nv->insert($_POST['tituloForm'], $_POST['textForm']);
     
@@ -26,7 +29,7 @@
 
 
 	if(!empty($_POST['cadastroProgramacao'])){
-	include "../model/crud_classe.php";
+	
 	$pr=new programacao();
 
 	$pr->insert($_POST['dateForm'], $_POST['horaForm'], $_POST['descForm']);
@@ -37,7 +40,7 @@
 
 
 	if(!empty($_POST['editEmecam'])){
-	include "../model/crud_classe.php";
+
    
       if(isset($_FILES['imgEmecam'])){
 		      date_default_timezone_set("Brazil/East"); //Definindo timezone padrão
@@ -62,9 +65,26 @@
 
 
 	if (!empty($_POST['excPalestra'])){
-		include "../model/crud_classe.php";
+		$pl->delete($_POST['idPalestra']);
 
 		header( "refresh:1;url=../view/paginas/excluir/exc_palestra.php" );
+
+	}
+
+
+
+	if (!empty($_POST['excNovidades'])){
+		$nv->delete($_POST['idNovidades']);
+
+		header( "refresh:1;url=../view/paginas/excluir/exc_novidades.php" );
+
+	}
+
+
+	if (!empty($_POST['excProgramacao'])){
+		$pr->delete($_POST['idProgramacao']);
+
+		header( "refresh:1;url=../view/paginas/excluir/exc_programacao.php" );
 
 	}
 

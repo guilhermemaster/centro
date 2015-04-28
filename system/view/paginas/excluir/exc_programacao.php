@@ -24,26 +24,25 @@
       ?>
 
         <div class="panel panel-default">
-          <div class="panel-heading">Palestras Cadastradas</div>
+          <div class="panel-heading">Porgramação Cadastradas</div>
           <div class="panel-body">
            <table class="table table-hover">
             <tr>
               <th>Data</th>
               <th>Horário</th>
               <th>Descrição</th>
-              <th>Excluir</th>
              </tr>
        
              <?php
               include "../../../model/geral_class.php";
               $ex=new geralSys();
-              $aux=$ex->selectPalestra("palestras");
+              $aux=$ex->selectPalestra("programacao");
               $aux->execute();
 
 
 
               while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
-                $date = new DateTime($linha['data']);
+              $date = new DateTime($linha['data']);
               print"  <tr>
 
               <td>".$date->format('d/m/Y')."</td>
@@ -51,8 +50,8 @@
               <td>".substr($linha['Descricao'], 0, 15)."</td>
               <td>
                 <form method=\"post\" action=\"../../../controle/controle_geral.php\"> 
-                  <input type=\"hidden\" name=\"idPalestra\" value=".$linha['idpalestras']." />
-                  <input type=\"hidden\" name=\"excPalestra\" value=\"ok\" />
+                  <input type=\"hidden\" name=\"idProgramacao\" value=".$linha['idProgramacao']." />
+                  <input type=\"hidden\" name=\"excProgramacao\" value=\"ok\" />
                   <button type=\"submit\" class=\"btn btn-danger\">Excluir</button>
                 </form> 
               </td>

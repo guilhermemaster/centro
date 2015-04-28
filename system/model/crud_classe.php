@@ -10,7 +10,7 @@
      * @package Model
      * @author Guilherme Barbosa Lima
      **/
-    class palestra{
+    class palestra extends geralSys{
         /**
          * Funções referente a palestra inserção e deleção no BD
          *
@@ -20,8 +20,8 @@
     
 
     	function insert($data, $descricao, $horario ){
-            include "config/conectar.php";
-            include "geral_class.php";
+            //include "config/conectar.php";
+            //include "geral_class.php";
 
     		$pdo=conectar();
             $insert=$pdo->prepare("insert into palestras (data, Descricao, horario) value (:data, :descricao, :horario) ");
@@ -32,13 +32,15 @@
 	   	}
 
 	   	   	function delete($id){
-            include "config/conectar.php";
-            include "geral_class.php";
+            //include "config/conectar.php";
+            //include "geral_class.php";
 
     		$pdo=conectar();
             $del=$pdo->prepare("delete from palestras where idpalestras=:idRece");
             $del->bindValue(":idRece", $id, PDO::PARAM_INT);
-            $del->execute();
+            if ($del->execute()){
+            print "<SCRIPT>alert (\"Exclução realizada com sucesso!\")</SCRIPT>";
+           }
  	   	}
     }//END class 
 
@@ -48,7 +50,7 @@
      * @package Model
      * @author Guilherme Barbosa Lima
      **/
-    class novidades{
+    class novidades extends geralSys{
         /**
          * inserção de novidades no BD.
          *
@@ -56,8 +58,8 @@
          * @author Guilherme Barbosa Lima
          **/
         function insert($titulo, $texto){
-            include "config/conectar.php";
-            include "geral_class.php";
+            //include "config/conectar.php";
+           // include "geral_class.php";
 
             $pdo=conectar();
             $insert=$pdo->prepare("insert into novidades (titulo, texto) values (:titulo, :texto)");
@@ -75,13 +77,15 @@
          * @author Guilherme Barbosa Lima
          **/
         function delete($id){
-            include "config/conectar.php";
-            include "geral_class.php";
+           // include "config/conectar.php";
+           // include "geral_class.php";
 
             $pdo=conectar();
-            $del=$pdo->prepare("delete from novidades where idNovidades=:idRece");
+            $del=$pdo->prepare("delete from novidades where idnovidade=:idRece");
             $del->bindValue(":idRece", $id, PDO::PARAM_INT);
-            $del->execute(); 
+            if ($del->execute()){
+            print "<SCRIPT>alert (\"Deletado com sucesso!\")</SCRIPT>";
+           } 
         }
 
     } // END class 
@@ -92,7 +96,7 @@
      * @package Model
      * @author Guilherme Barbosa Lima
      **/
-    class programacao{
+    class programacao extends geralSys{
         /**
          * Inserção de programação no BD.
          *
@@ -100,8 +104,8 @@
          * @author Guilherme Barbosa Lima
          **/
         function insert($data, $horario, $descricao){
-            include "config/conectar.php";
-            include "geral_class.php";
+            //include "config/conectar.php";
+           // include "geral_class.php";
 
             $pdo=conectar();
             $insert=$pdo->prepare("insert into programacao (horario, data, Descricao) values (:horario, :data, :descricao)");
@@ -113,6 +117,24 @@
            }
         }
 
+         /**
+         * Deleção uma novidade do BD.
+         *
+         * @return void
+         * @author Guilherme Barbosa Lima
+         **/
+        function delete($id){
+           // include "config/conectar.php";
+           // include "geral_class.php";
+
+            $pdo=conectar();
+            $del=$pdo->prepare("delete from programacao where idProgramacao=:idRece");
+            $del->bindValue(":idRece", $id, PDO::PARAM_INT);
+            if ($del->execute()){
+            print "<SCRIPT>alert (\"Deletado com sucesso!\")</SCRIPT>";
+           } 
+        }
+
     } // END class 
 
     /**
@@ -121,7 +143,7 @@
      * @package model
      * @author Guilherme Barbosa Lima
      **/
-    class emecam{
+    class emecam extends geralSys{
         /**
          * alteração dos valores da tabela emecam
          *
@@ -129,8 +151,8 @@
          * @author Guilherme Barbosa Lima
          **/
         function edit($titulo, $texto, $img){
-            include "config/conectar.php";
-            include "geral_class.php";
+           // include "config/conectar.php";
+           // include "geral_class.php";
 
             $general=new geralSys();
             $pdo=conectar();

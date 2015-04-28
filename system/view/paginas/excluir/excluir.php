@@ -31,11 +31,11 @@
               <button type="submit" class="btn btn-info lado_lado">PALESTRAS</button>
               </form>
 
-              <form action="cadastro_fornecedor.php" method="post">
+              <form action="exc_novidades.php" method="post">
               <button type="submit" class="btn btn-info lado_lado">NOVIDADES</button>
               </form>
 
-               <form action="cadastro_fornecedor.php" method="post">
+               <form action="exc_programacao.php" method="post">
               <button type="submit" class="btn btn-info lado_lado">PROGRAMAÇÃO</button>
               </form>
 
