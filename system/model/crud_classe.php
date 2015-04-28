@@ -1,6 +1,6 @@
 <?php
-	include "config/conectar.php";
-    include "geral_class.php";
+     include "geral_class.php";
+
 
 
    
@@ -20,6 +20,9 @@
     
 
     	function insert($data, $descricao, $horario ){
+            include "config/conectar.php";
+            include "geral_class.php";
+
     		$pdo=conectar();
             $insert=$pdo->prepare("insert into palestras (data, Descricao, horario) value (:data, :descricao, :horario) ");
             $insert->bindValue(":data", $data, PDO::PARAM_STR);
@@ -29,6 +32,9 @@
 	   	}
 
 	   	   	function delete($id){
+            include "config/conectar.php";
+            include "geral_class.php";
+
     		$pdo=conectar();
             $del=$pdo->prepare("delete from palestras where idpalestras=:idRece");
             $del->bindValue(":idRece", $id, PDO::PARAM_INT);
@@ -50,6 +56,9 @@
          * @author Guilherme Barbosa Lima
          **/
         function insert($titulo, $texto){
+            include "config/conectar.php";
+            include "geral_class.php";
+
             $pdo=conectar();
             $insert=$pdo->prepare("insert into novidades (titulo, texto) values (:titulo, :texto)");
             $insert->bindValue(":titulo", $titulo, PDO::PARAM_STR);
@@ -66,6 +75,9 @@
          * @author Guilherme Barbosa Lima
          **/
         function delete($id){
+            include "config/conectar.php";
+            include "geral_class.php";
+
             $pdo=conectar();
             $del=$pdo->prepare("delete from novidades where idNovidades=:idRece");
             $del->bindValue(":idRece", $id, PDO::PARAM_INT);
@@ -88,6 +100,9 @@
          * @author Guilherme Barbosa Lima
          **/
         function insert($data, $horario, $descricao){
+            include "config/conectar.php";
+            include "geral_class.php";
+
             $pdo=conectar();
             $insert=$pdo->prepare("insert into programacao (horario, data, Descricao) values (:horario, :data, :descricao)");
             $insert->bindValue(":horario", $horario, PDO::PARAM_STR);
@@ -114,6 +129,9 @@
          * @author Guilherme Barbosa Lima
          **/
         function edit($titulo, $texto, $img){
+            include "config/conectar.php";
+            include "geral_class.php";
+
             $general=new geralSys();
             $pdo=conectar();
 

@@ -28,7 +28,7 @@ class geralSys{
 	function selectPalestra(){
 		$pdo=conectar();
 		$selPalestra=$pdo->prepare("select * from palestras");
-		$selPalestra->execute();
+		//$selPalestra->execute();
 
 		return $selPalestra;
 

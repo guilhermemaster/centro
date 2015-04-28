@@ -34,19 +34,39 @@
               <th>Excluir</th>
              </tr>
        
+             <?php
+              include "../../../model/geral_class.php";
+              $ex=new geralSys();
+              $aux=$ex->selectPalestra();
+              $aux->execute();
 
 
-            <tr>
-              <td>data</td>
-              <td>horario</td>
-              <td>descrição</td>
+
+              while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
+                $date = new DateTime($linha['data']);
+              print"  <tr>
+
+              <td>".$date->format('d/m/Y')."</td>
+              <td>".$linha['horario']."</td>
+              <td>".$linha['Descricao']."</td>
               <td>
-                <form method="post" action="../../../controle/controle_geral.php" enctype="multipart/form-data"> 
-                  <input type="hidden" name="excPalestra" value="ok" />
-                  <button type="submit" class="btn btn-danger">Excluir</button>
+                <form method=\"post\" action=\"../../../controle/controle_geral.php\"> 
+                  <input type=\"hidden\" name=\"idPalestra\" value=".$linha['horario']." />
+                  <input type=\"hidden\" name=\"excPalestra\" value=\"ok\" />
+                  <button type=\"submit\" class=\"btn btn-danger\">Excluir</button>
                 </form> 
               </td>
-            </tr>
+            </tr>";
+
+              }
+              
+              
+              
+
+              
+              ?> 
+
+
 
           </table> 
 
