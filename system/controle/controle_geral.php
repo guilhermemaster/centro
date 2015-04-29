@@ -4,6 +4,7 @@
 	$pl=new palestra();
 	$nv=new novidades();
 	$pr=new programacao();
+	$hm=new home();
 
 
 	if (!empty($_POST['cadastroPalestra'])){
@@ -88,5 +89,11 @@
 
 	}
 
+	if (!empty($_POST['editHome'])){
+		$hm->edit($_POST['text1'], $_POST['text2'], $_POST['text3'], $_POST['text4'], $_POST['text5'], $_POST['text6'], $_POST['text7'] );
+
+		header( "refresh:1;url=../view/paginas/edit/edit_home.php" );
+
+	}
 
 ?>

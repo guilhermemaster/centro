@@ -30,13 +30,13 @@
             <tr>
               <th>Título</th>
               <th>Descrição</th>
-              <th>Excluir</th>
+              
              </tr>
        
              <?php
               include "../../../model/geral_class.php";
               $ex=new geralSys();
-              $aux=$ex->selectPalestra("novidades");
+              $aux=$ex->selectGeral("novidades");
               $aux->execute();
 
 
@@ -47,14 +47,8 @@
 
               
               <td>".$linha['titulo']."</td>
-              <td>".substr($linha['texto'], 0, 15)."</td>
-              <td>
-                <form method=\"post\" action=\"../../../controle/controle_geral.php\"> 
-                  <input type=\"hidden\" name=\"idNovidades\" value=".$linha['idnovidade']." />
-                  <input type=\"hidden\" name=\"excNovidades\" value=\"ok\" />
-                  <button type=\"submit\" class=\"btn btn-danger\">Excluir</button>
-                </form> 
-              </td>
+              <td>"$linha['texto']."</td>
+            
             </tr>";
 
               }

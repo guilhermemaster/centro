@@ -180,4 +180,34 @@
         }
     } // END class 
 
+    /**
+     * classe referente a tabela home
+     *
+     * @package model
+     * @author Guilherme Barbosa Lima
+     **/
+    class home{
+        /**
+         * undocumented function
+         *
+         * @return void
+         * @author 
+         **/
+        function edit($titulo_1, $texto_1, $titulo_2, $texto_2, $lateral_1, $lateral_2, $lateral_3){
+            $pdo=conectar();
+            $edit=$pdo->prepare('update home set tituloprimario=:primeiro, textoprimario=:segundo, titulosecundario=:terceiro, textosecundario=:guarto, textolateral1=:quinto, textolateral2=:sexto, textolateral3=:setimo
+            where idhome=1');
+            $edit->bindValue(":primeiro", $titulo_1, PDO::PARAM_STR);
+            $edit->bindValue(":segundo", $texto_1, PDO::PARAM_STR);
+            $edit->bindValue(":terceiro", $titulo_2, PDO::PARAM_STR);
+            $edit->bindValue(":guarto", $texto_2, PDO::PARAM_STR);
+            $edit->bindValue(":quinto", $lateral_1, PDO::PARAM_STR);
+            $edit->bindValue(":sexto", $lateral_2, PDO::PARAM_STR);
+            $edit->bindValue(":setimo", $lateral_3, PDO::PARAM_STR);
+
+            $edit->execute();
+        }
+    } // END class 
+
+
 ?>

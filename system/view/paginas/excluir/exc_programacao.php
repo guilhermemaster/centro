@@ -36,7 +36,7 @@
              <?php
               include "../../../model/geral_class.php";
               $ex=new geralSys();
-              $aux=$ex->selectPalestra("programacao");
+              $aux=$ex->selectGeral("programacao");
               $aux->execute();
 
 

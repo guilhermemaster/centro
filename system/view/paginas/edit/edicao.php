@@ -35,7 +35,7 @@
               <button type="submit" class="btn btn-info lado_lado">EMECAM</button>
               </form>
 
-               <form action="cadastro_fornecedor.php" method="post">
+               <form action="edit_mocidade.php" method="post">
               <button type="submit" class="btn btn-info lado_lado">MOCIDADE ESPÍRITA</button>
               </form>
 
