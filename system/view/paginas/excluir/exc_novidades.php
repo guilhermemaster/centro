@@ -30,7 +30,7 @@
             <tr>
               <th>Título</th>
               <th>Descrição</th>
-              
+              <th>Excluir</th>
              </tr>
        
              <?php
@@ -47,8 +47,14 @@
 
               
               <td>".$linha['titulo']."</td>
-              <td>"$linha['texto']."</td>
-            
+              <td>".substr($linha['texto'], 0, 15)."</td>
+              <td>
+                <form method=\"post\" action=\"../../../controle/controle_geral.php\"> 
+                  <input type=\"hidden\" name=\"idNovidades\" value=".$linha['idnovidade']." />
+                  <input type=\"hidden\" name=\"excNovidades\" value=\"ok\" />
+                  <button type=\"submit\" class=\"btn btn-danger\">Excluir</button>
+                </form> 
+              </td>
             </tr>";
 
               }

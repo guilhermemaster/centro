@@ -21,9 +21,13 @@ create table emecam (
 
 show tables
 
+select * from novidades
+
+update home set tituloprimario='teste', textoprimario='dsad', titulosecundario='dsdsds', textosecundario='ddsasdfs', textolateral1='32323',
+textolateral2='dasdd213', textolateral3='qweqeqwe'
+  where idhome=1
+
 select * from emecam
-
-
 
 
 

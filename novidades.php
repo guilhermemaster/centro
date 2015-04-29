@@ -90,7 +90,7 @@
               print"  <tr>
 
               
-              <td>".$linha['titulo']."</td>
+              <td>".$linha['titulo']." |</td>
               <td>".$linha['texto']."</td>
        
             </tr>";

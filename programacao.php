@@ -7,6 +7,25 @@
 	<title>Centro Esp&iacute;rita Caridade e F&eacute;</title>
 </head>
 <body>
+	<?php 
+	           include "system/model/geral_class.php";
+                $ex=new geralSys();
+                $aux=$ex->selectGeral("home");
+                $aux->execute();
+
+                        while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
+
+                           $tituloprimario = $linha['tituloprimario'];
+                           $textoprimario = $linha['textoprimario'];
+
+                           $titulosecundario = $linha['titulosecundario'];
+                           $textosecundario = $linha['textosecundario'];
+
+                           $textolateral1 = $linha['textolateral1'];
+                           $textolateral2 = $linha['textolateral2'];
+                           $textolateral3 = $linha['textolateral3'];
+                        }
+                ?>
 	<div class="content">
 	
 			<div class="preheader">
@@ -36,50 +55,65 @@
 			<div class="main_content">
 				<div class="sd_right">
 					<div class="text_padding">
-						<h2>Jornada Espírita de Campo Maior</h2>A Jornada Espírita acontecera nos dias 8, 9 e 10 de Agosto no Centro Espírita Caridade e Fé.
+						<h2><?php print $textolateral1; ?></h2>
 						<br />
-						
 						<br />
-						<h2>Outros</h2>
-						<a href="#">........</a><br />
-						<a href="#">........</a><br />
+						<h2><?php print $textolateral2; ?></h2>
 						<br />
-						<h2>Outros</h2>
-						<a href="#">.......</a><br />
-						<a href="#">.......</a><br />
+						<br />
+						<h2><?php print $textolateral3; ?></h2>
+						<br />
+						<br />
 					</div>
 				</div>
 			
 				<div class="sd_left">
 					<div class="text_padding">	
-					<?php
-						include_once "conexao.php";
+				 <table>
+            <tr>
+              
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Descrição</th>
+              
+             </tr>
+       
+                <?php
+           
+              $ex=new geralSys();
+              $aux=$ex->selectGeral("programacao");
+              $aux->execute();
 
-					
-					
-					$sql="SELECT * FROM 	Programacao";
-					$resultado = mysql_query($sql) or die ("Não é possivel realiza a consuta");
-					if(@mysql_num_rows($resultado)==0) die ("Nenhum registro encontrado");
-					
-					while($linha=mysql_fetch_array($resultado)) {
-print "<p>Data: ".$linha['data']."&nbsp;
- 		Horário:".$linha['horario']."&nbsp;
- 		Descrição: ".$linha['Descricao']."</p><br/>";
-					
-					
-					}
-					
-     				      
-					?>
+
+
+              while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
+               $date = new DateTime($linha['data']);
+              print"  <tr>
+
+              
+              <td>".$date->format('d/m/Y')." |</td>
+              <td>".$linha['horario']." |</td>
+              <td>".$linha['Descricao']."</td>
+       
+            </tr>";
+
+              }
+              
+              
+              
+
+              
+              ?> 
+
+
+
+          </table> 
 					</div>
 				</div>
 	
 				<div class="footer">
 					<div class="padding">
-						Powered by <a href="http://snews.solucija.com" title="Single file CSS and XHTML valid CMS">sNews</a>	
-						| &copy; Copyright BinaryNews Template :: Design: <a href="http://www.free-css-templates.com/" title="Free CSS Templates">David Herreman</a>
-						| <a href="rss/">RSS Feed</a> | <a href="#">CSS</a> and <a href="#">XHTML</a>  | <a href="#">Login</a>
-					</div>
+						</div>
 				</div>
 			</div>
 	</div>
