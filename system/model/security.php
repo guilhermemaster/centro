@@ -5,11 +5,7 @@
 	Finalidade: Partes do sistema G_Index v2.0.0
 */
 
-	    error_reporting(E_WARNING);
-		ini_set(“display_errors”, 1 );
-		$conexao = mysql_connect("localhost", "root", "leticia") or die ("<script>alert(\"Erro ao Conectar ao Banco de Dados!\");</script>");
-		$db = mysql_select_db("g_indexsystem") or die ("<script>alert(\"Erro ao selecionar o Banco de Dados!\");</script>"); 
-
+	  
 		class configuration_defult{
 			/**
 			* função de destruição da sessão iniciada

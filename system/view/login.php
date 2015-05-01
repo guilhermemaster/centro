@@ -43,9 +43,43 @@
       Finalidade: Partes do sistema G_Index v2.0.0
     */
 
-    include_once "../model/config/configuration_ge.php";
    
+      include "../model/geral_class.php";
 
+  if (! empty($_POST['login'])){
+      $nome =strtoupper($_POST['login']);
+      $senha =strtoupper( $_POST['senha']);
+              
+              $ex=new geralSys();
+              $aux=$ex->selectGeral("configuracoes");
+              $aux->execute();
+
+
+
+              while($linha=$aux->fetch(PDO::FETCH_ASSOC)){
+                  if( $nome == $linha['nome'] && $senha == $linha['senha']){
+                    $iduser=$linha['idConfiguracoes'];
+                    $nomesessao=$linha['nome'];
+
+                    $validador="valido";
+                      break;
+                  }//end if  
+
+              }//end while
+
+        if( $validador=="valido"){
+        session_start("administracao");
+        $_SESSION["user"]=$nomesessao;
+        $_SESSION['id']=$iduser;
+        $_SESSION["md5"]=md5($nomesessao);
+        print "<meta http-equiv=\"refresh\" content=\"3;url=leyout.php\">";
+         }else{
+        print "<meta http-equiv=\"refresh\" content=\"3;url=login.php\">";
+        }
+
+  }//end if empty
+   
+/*
     if (! empty($_POST['login'])){
         
       $nome =strtoupper($_POST['login']);
@@ -75,7 +109,7 @@
         print "<meta http-equiv=\"refresh\" content=\"3;url=acesso_negado.php\">";
         }
    }//fim do empty
-
+*/
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

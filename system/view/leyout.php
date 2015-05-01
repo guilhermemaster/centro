@@ -80,16 +80,17 @@
     <script src="js/buttons.js"></script>
 
     <?php
-      include_once "../model/config/configuration_ge.php";
-      $secao=new configuration_defult;
+      include_once "../model/security.php";
+      $secao=new configuration_defult();
 
       if ($_POST['sair']=='exit'){
          $secao->destry_sessao();
+         print "<meta http-equiv=\"refresh\" content=\"3;url=../../index.php\">";
 
       }
 
-      $secao->security($_SESSION["user"]);
-      $secao->security_md5($_SESSION['md5'],$_SESSION['user']);
+    //  $secao->security($_SESSION["user"]);
+   //   $secao->security_md5($_SESSION['md5'],$_SESSION['user']);
      
       
     ?>

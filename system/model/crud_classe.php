@@ -186,7 +186,7 @@
      * @package model
      * @author Guilherme Barbosa Lima
      **/
-    class home{
+    class home extends geralSys{
         /**
          * undocumented function
          *
@@ -206,6 +206,34 @@
             $edit->bindValue(":setimo", $lateral_3, PDO::PARAM_STR);
 
             $edit->execute();
+        }
+    } // END class 
+
+    /**
+     * classe de configuração da configuração de acesso
+     *
+     * @package model
+     * @author Guilherme Barbosa Lima
+     **/
+    class configuracao extends geralSys{
+        /**
+         * undocumented function
+         *
+         * @return void
+         * @author 
+         **/
+        function updat($nome, $senha, $email, $id){
+            $pdo=conectar();
+            $edit=$pdo->prepare('update configuracoes set nome=:nome, senha=:senha, email=:email where idConfiguracoes=:id;');
+            $edit->bindValue(":nome", $nome, PDO::PARAM_STR);
+            $edit->bindValue(":senha", $senha, PDO::PARAM_STR);
+            $edit->bindValue(":email", $email, PDO::PARAM_STR);
+            $edit->bindValue(":id", $id, PDO::PARAM_INT);
+           
+
+            $edit->execute();
+
+
         }
     } // END class 
 
