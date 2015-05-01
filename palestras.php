@@ -113,9 +113,6 @@
 	
 				<div class="footer">
 					<div class="padding">
-						Powered by <a href="http://snews.solucija.com" title="Single file CSS and XHTML valid CMS">sNews</a>	
-						| &copy; Copyright BinaryNews Template :: Design: <a href="http://www.free-css-templates.com/" title="Free CSS Templates">David Herreman</a>
-						| <a href="rss/">RSS Feed</a> | <a href="#">CSS</a> and <a href="#">XHTML</a>  | <a href="#">Login</a>
 					</div>
 				</div>
 			</div>

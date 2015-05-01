@@ -92,7 +92,7 @@
 	
 				<div class="footer">
 					<div class="padding">
-				
+					
 					</div>
 				</div>
 			</div>
