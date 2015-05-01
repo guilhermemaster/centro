@@ -100,7 +100,7 @@
 
 	if (!empty($_POST['config'])){
 		//$hm->edit($_POST['text1'], $_POST['text2'], $_POST['text3'], $_POST['text4'], $_POST['text5'], $_POST['text6'], $_POST['text7'] );
-		$conf->updat($_POST['nome'], $_POST['senha'], $_POST['email'], 1);
+		$conf->updat(strtoupper($_POST['nome']), strtoupper($_POST['senha']), strtoupper($_POST['email']), 1);
 		header( "refresh:1;url=../view/configuracoes.php" );
 
 	}
